@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlan7mxy8r6yn"]
+
+[ext_resource type="Script" uid="uid://mgl744wh3om3" path="res://addons/2d_parallax_level_editor/level_editor_ui.gd" id="1_kprsr"]
+
+[node name="LevelEditorUi" type="VBoxContainer"]
+script = ExtResource("1_kprsr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Level editor"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="up in layer" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "up in layer"
+
+[node name="down in layer" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "down in layer"
+
+[node name="centerButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Center parralax layers"
+
+[node name="Disable_Parallax_button" type="Button" parent="."]
+layout_mode = 2
+text = "toggle parralax"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="New_close" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "new close layer"
+
+[node name="New_far" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "new far layer"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "More options"
+horizontal_alignment = 1
+
+[node name="Toggle_camera" type="Button" parent="."]
+layout_mode = 2
+text = "Toggle Camera visibility"
+
+[connection signal="pressed" from="HBoxContainer/up in layer" to="." method="_on_up_in_layer_pressed"]
+[connection signal="pressed" from="HBoxContainer/down in layer" to="." method="_on_down_in_layer_pressed"]
+[connection signal="pressed" from="centerButton" to="." method="_on_center_button_pressed"]
+[connection signal="pressed" from="Disable_Parallax_button" to="." method="_on_disable_parallax_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/New_close" to="." method="_on_new_close_pressed"]
+[connection signal="pressed" from="HBoxContainer2/New_far" to="." method="_on_new_far_pressed"]
+[connection signal="pressed" from="Toggle_camera" to="." method="_on_toggle_camera_pressed"]
