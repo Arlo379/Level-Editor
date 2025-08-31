@@ -1,4 +1,4 @@
-# 2D Level-Editor - Godot 4
+# 2D Level-Editor - Godot 
 This tool allows Parallax2D nodes to automatically Parallax in the editor. It has greater functionalities that increase the ease of level creation.
 To use, download it into the addons folder in the Godot file manager.
 Enable it in project settings.
