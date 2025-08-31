@@ -9,4 +9,5 @@ I would recommend customizing the included character sprite and the Character to
 There are a few export variables that you can customize, but it isn't necessary.
 
 Important
+
 For the best results, make sure that the camera you use is in the center of the default viewport.
