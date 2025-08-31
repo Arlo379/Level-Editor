@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://j1l348elobqh"]
+
+[ext_resource type="Script" uid="uid://blgcc1kcrhy1q" path="res://addons/2d_parallax_level_editor/UI.gd" id="1_vwsg7"]
+[ext_resource type="Script" uid="uid://caiqxnnvbrcv1" path="res://addons/2d_parallax_level_editor/Draw_Camera.gd" id="2_4rb6q"]
+[ext_resource type="Script" uid="uid://j0ymyp0f0xsn" path="res://Scenes/character_body_2d.gd" id="6_j2vpy"]
+[ext_resource type="Texture2D" uid="uid://dydtji425jwi6" path="res://Assets/icon.svg" id="7_g4rxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74sk7"]
+size = Vector2(127, 124)
+
+[node name="editor" type="Node2D"]
+
+[node name="Parralax_tool" type="Node" parent="." node_paths=PackedStringArray("container_for_Layers")]
+script = ExtResource("1_vwsg7")
+container_for_Layers = NodePath("../Parallax_Layers")
+metadata/_custom_type_script = "uid://blgcc1kcrhy1q"
+
+[node name="Draw_tool" type="Node2D" parent="." node_paths=PackedStringArray("camera", "Character")]
+z_index = 4096
+script = ExtResource("2_4rb6q")
+camera = NodePath("../Character/Camera2D")
+Character = NodePath("../Character_sprite")
+metadata/_custom_type_script = "uid://caiqxnnvbrcv1"
+
+[node name="Character_sprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(910.343, 397.031)
+texture = ExtResource("7_g4rxg")
+
+[node name="Character" type="CharacterBody2D" parent="."]
+position = Vector2(572, 319)
+motion_mode = 1
+script = ExtResource("6_j2vpy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character"]
+texture = ExtResource("7_g4rxg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_74sk7")
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+zoom = Vector2(2, 2)
+
+[node name="Parallax_Layers" type="Node2D" parent="."]
+position = Vector2(738, 391)
